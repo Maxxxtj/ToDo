@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    
+    <style>
+        #new{
+        width: 60%;
+    }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+
+        .todo {
+            padding: 40px;
+            background-color: rgb(220, 193, 161);
+            width: 90vh;
+            border-radius: 15px;
+        }
+        .todo_title{
+            text-align: center;
+        }
+        .todo_new{
+            display: flex;
+            padding: 15px 0 30px;
+        }
+
+        .todo_new input{
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            flex-grow: 1;
+            
+        }
+        
+        .todo_task{
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .todo_task_complete .todo_task-text-text{
+            text-decoration: line-through;
+            color: rgba(68, 70, 70, 0.727);
+        }
+        .todo_task-text {
+            width: 85%;
+            box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5px;
+            padding-left: 7px;
+            padding-top: 2px;
+            
+        }
+        .todo_task-datetime{
+            text-align: right;
+            padding-right: 7px;
+        }
+        
+
+        .todo_button{
+            border-radius: 5px;
+        }
+        .checkbox{
+            margin-right: 12px;
+            margin-left: 12px;
+        }
+        .checkbox input{
+            display: none;
+        }
+        
+        .checkbox input:checked + div::after{
+            display: block;
+        }
+        .checkbox div{
+            height: 25px;
+            width: 25px;
+            border: 1px solid saddlebrown;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .checkbox div::after{
+            content: '✓';
+            text-align: center;
+            display: none;
+        }
+
+        .todo_task-del{
+            margin-left: auto;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+        .todo_task-change{
+            margin-left: 12px;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+       
+        
+    </style>
+
+    <div class="todo">
+        <div class="todo_content">
+            <h1 class="todo_title">Список задач</h1>
+            <div class="todo_new">
+                <input id="new" type="text" maxlength="200" placeholder="Задача">
+                <input id="datetime" type="datetime-local">
+                <button id="add" class="todo_button" type="submit">Добавить</button>
+            </div>
+                <div style="overflow: hidden;">
+                <div style="width: 100%;">
+                 <div id="list" class="todo_list">
+                
+                <!-- <div class="todo_task todo_task_complete">
+                    <div class="todo_task-text"> 
+                        <div class="todo_task-text-text" style="float: left; width: 100px;>fnf</div>
+                        <div class="todo_task-datetime">sdv</div>
+                    </div>
+                    
+                    <div class="todo_task-change">✎</div>
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <div></div>
+                    </label> 
+                    <div class="todo_task-del">🗑️</div>  
+                                      
+                </div>
+            -->
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
