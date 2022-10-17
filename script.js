@@ -109,12 +109,14 @@ function deleteTask(id, list){
 }
 
 //изменение задачи
-function changeTask(id, list){
+function changeTask(id, list, ){
     list.forEach((task, idx)=>{
-        if (task.id == id){
-            const taskchange = task.text;
-            
-            console.log(taskchange)
-        }
+    if (task.id == id){
+        dom.new.value=task.text;
+        dom.datetime.value=task.date;
+        list.splice(idx, 1);
+    }
     })
 }
+
+
