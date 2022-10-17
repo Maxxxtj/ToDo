@@ -6,6 +6,8 @@ const dom ={
    
 }
 
+
+
 //Массив задач
 const tasks = [];
 
@@ -16,7 +18,7 @@ dom.add.onclick = () => {
         dom.new.value = ''
         dom.datetime.value = ''
         tasksRender(tasks)
-        console.log(dom.datetime.value);
+        
     }
 }
 
@@ -110,7 +112,9 @@ function deleteTask(id, list){
 function changeTask(id, list){
     list.forEach((task, idx)=>{
         if (task.id == id){
+            const taskchange = task.text;
             
+            console.log(taskchange)
         }
     })
 }
