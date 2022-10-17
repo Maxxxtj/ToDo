@@ -65,6 +65,7 @@ dom.list.onclick=(event) =>{
     const target = event.target
     const isCheckboxEl = target.classList.contains('todo_checkbox')
     const isDeleteEl = target.classList.contains('todo_task-del')
+    const isChangeEl = target.classList.contains('todo_task-change')
 
     if (isCheckboxEl){
         const task = target.parentElement.parentElement
@@ -76,6 +77,13 @@ dom.list.onclick=(event) =>{
         const task = target.parentElement
         const taskId = task.getAttribute('id')
         deleteTask(taskId, tasks)
+        tasksRender(tasks)
+    }
+   
+    if(isChangeEl){
+        const task = target.parentElement
+        const taskId = task.getAttribute('id')
+        changeTask(taskId, tasks)
         tasksRender(tasks)
     }
 }
@@ -94,6 +102,15 @@ function deleteTask(id, list){
     list.forEach((task, idx)=>{
         if (task.id == id){
         list.splice(idx, 1)
+        }
+    })
+}
+
+//изменение задачи
+function changeTask(id, list){
+    list.forEach((task, idx)=>{
+        if (task.id == id){
+            
         }
     })
 }
